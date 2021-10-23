@@ -1,0 +1,194 @@
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  background: rgb(240, 240, 240);
+  margin: 5px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: rgb(75, 75, 75);
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(206, 142, 59);
+}
+
+a:hover {
+  color: rgb(221, 172, 109);
+}
+
+p#datetime {
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+label {
+  display: block;
+  margin: 10px 0px 2px 10px;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+  border: 1px solid rgb(219, 156, 74);
+  width: 200px;
+  border-radius: 10px;
+  display: block;
+  text-indent: 10px;
+  padding: 10px 0px;
+  margin: 0px 10px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="number"]:hover {
+  background: rgb(242, 242, 242);
+  margin: 0px 10px;
+}
+
+input[type="submit"] {
+  margin: 10px 10px;
+  display: block;
+  background: rgb(219, 156, 74);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 6px 25px;
+  cursor: pointer;
+  color: white;
+}
+
+input[type="checkbox"] {
+  border: 1px solid rgb(219, 156, 74);
+  border-radius: 2px;
+  width: 10px;
+  height: 10px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: rgb(224, 173, 107);
+}
+
+input.currency {
+  background: rgb(230, 230, 230);
+}
+
+input.currency:hover {
+  background: rgb(230, 230, 230);
+}
+
+select {
+  border: 1px solid rgb(219, 156, 74);
+  width: 200px;
+  border-radius: 10px;
+  display: block;
+  text-indent: 10px;
+  padding: 10px 0px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+p.message {
+  color: rgb(67, 173, 187);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0px 10px;
+  padding: 0px;
+  display: block;
+  width: 100%;
+}
+
+select {
+  text-indent: 5px;
+}
+
+legend {
+  margin: 10px 10px;
+}
+
+input#logout {
+  position: absolute;
+  top: 5px;
+  left: 2px;
+}
+
+form {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li {
+  display: inline-block;
+  padding: 25px 25px;
+}
+
+ul > li > a {
+  display: inline-block;
+  padding: 10px 25px;
+}
+
+div.nav {
+  margin-top: 50px;
+  border: 1px solid rgb(224, 173, 107);
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 5px 10px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+div.expenses-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+div.expense {
+  flex-basis: 30%;
+  padding: 10px;
+  background: white;
+  display: inline-block;
+  width: 90%;
+  border-radius: 10px;
+  margin: 10px 15px;
+  border: 1px solid rgb(219, 156, 74); 
+}
+
+div.expenses-summaries-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.expense-summary {
+  flex-basis: 30%;
+  padding: 10px;
+  background: white;
+  display: inline-block;
+  width: 90%;
+  border-radius: 10px;
+  margin: 10px 15px;
+  border: 1px solid rgb(219, 156, 74); 
+}
+
+h2#login-status {
+  margin: 60px 0px 10px 10px;
+}

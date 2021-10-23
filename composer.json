@@ -1,0 +1,9 @@
+{
+  "require" : {
+    "ext-mbstring": "*",
+    "csanquer/pdo-service-provider": "~1.1dev"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  }
+}
