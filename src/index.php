@@ -1,11 +1,11 @@
 <?php
 // Load local environment variables
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/env.php')) {
-  require_once($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/env.php');
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/env.php')) {
+  require_once($_SERVER["DOCUMENT_ROOT"] . '/env.php');
 }
 
-require_once($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/Settings.php');
-require_once($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/Environment.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . '/Settings.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . '/Environment.php');
 $environment = new Environment();
 $settings = new Settings();
 
@@ -21,8 +21,8 @@ ini_set( 'session.cookie_samesite', 'lax');
 
 session_start();
 
-require_once($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/controller/Application.php');
-require_once($_SERVER["DOCUMENT_ROOT"] . '/ExpenseTrackerApplication/view/View.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . '/controller/Application.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . '/view/View.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/AuthComponent/AuthComponent.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/ExpenseTrackerComponent.php');
 
