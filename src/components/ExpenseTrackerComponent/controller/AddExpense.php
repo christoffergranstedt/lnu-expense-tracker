@@ -75,7 +75,7 @@ class AddExpense {
     $amount = new Amount($this->viewSession->getEnteredAmount());
     $currency = new Currency($this->viewSession->getEnteredCurrency());
     $expenseType = new ExpenseType($this->viewSession->getEnteredExpenseType());
-    return new Expense($this->user, $description, $amount, $currency, $expenseType);
+    return new Expense($this->user, $date, $description, $amount, $currency, $expenseType);
   }
 
   private function displayErrorMessageAndExit (Exception $e) : void {
