@@ -2,8 +2,8 @@
 
 namespace ExpenseTrackerComponent\Model;
 
-use ExpenseTrackerComponent\Model\Date as Date;
 use ExpenseTrackerComponent\Model\User as User;
+use ExpenseTrackerComponent\Model\Date as Date;
 use ExpenseTrackerComponent\Model\Description as Description;
 use ExpenseTrackerComponent\Model\Currency as Currency;
 use ExpenseTrackerComponent\Model\Amount as Amount;
