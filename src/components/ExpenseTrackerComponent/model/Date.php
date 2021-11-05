@@ -3,6 +3,7 @@
 namespace ExpenseTrackerComponent\Model;
 
 use \ExpenseTrackerComponent\InvalidDateException as InvalidDateException;
+use \Datetime;
 
 class Date {
   public string $date;
