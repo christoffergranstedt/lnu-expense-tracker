@@ -30,7 +30,7 @@ label {
   margin: 10px 0px 2px 10px;
 }
 
-input[type="text"], input[type="password"], input[type="number"] {
+input[type="text"], input[type="password"], input[type="number"] input[type="date"] {
   border: 1px solid rgb(219, 156, 74);
   width: 200px;
   border-radius: 10px;
@@ -40,7 +40,7 @@ input[type="text"], input[type="password"], input[type="number"] {
   margin: 0px 10px;
 }
 
-input[type="text"]:hover, input[type="password"]:hover, input[type="number"]:hover {
+input[type="text"]:hover, input[type="password"]:hover, input[type="number"] input[type="date"]:hover {
   background: rgb(242, 242, 242);
   margin: 0px 10px;
 }

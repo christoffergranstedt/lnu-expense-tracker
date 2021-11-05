@@ -69,7 +69,7 @@ class AddExpense {
   }
 
   private function getExpenseDataOfEnteredValues () : Expense {
-    $date = new Description($this->viewSession->getEnteredDate());
+    $date = new Date($this->viewSession->getEnteredDate());
     $description = new Description($this->viewSession->getEnteredDescription());
     $amount = new Amount($this->viewSession->getEnteredAmount());
     $currency = new Currency($this->viewSession->getEnteredCurrency());
