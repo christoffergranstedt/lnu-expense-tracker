@@ -46,7 +46,7 @@ class ExpenseDAL {
       $amount = new Amount((string)$expensesFromDAL[$i][self::$amountId]);
       $currencyId = new Currency($expensesFromDAL[$i][self::$currencyId]);
       $expenseType = new ExpenseType($expensesFromDAL[$i][self::$expenseTypeId]);
-      $expensesToReturn[] = new Expense($user, $description, $amount, $currencyId, $expenseType);
+      $expensesToReturn[] = new Expense($user, $date, $description, $amount, $currencyId, $expenseType);
     }
     return $expensesToReturn;
   }
