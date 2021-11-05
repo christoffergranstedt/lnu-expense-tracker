@@ -14,6 +14,7 @@ class ExpenseDAL {
   private static string $dbNameId = 'expenses';
   private static string $idId = 'id';
   private static string $usernameId = 'username';
+  private static string $dateId = 'date';
   private static string $descriptionId = 'description';
   private static string $amountId = 'amount';
   private static string $currencyId = 'currency';
@@ -39,6 +40,7 @@ class ExpenseDAL {
     $expensesFromDAL = $this->fetchExpensesByUsername($username);
     for ($i = 0; $i < count($expensesFromDAL); $i++) {
       $user = new User($expensesFromDAL[$i][self::$usernameId]);
+      $date = new Date($expensesFromDAL[$i][self::$dateId]);
       $description = new Description($expensesFromDAL[$i][self::$descriptionId]);
       $amount = new Amount((string)$expensesFromDAL[$i][self::$amountId]);
       $currencyId = new Currency($expensesFromDAL[$i][self::$currencyId]);
@@ -49,15 +51,16 @@ class ExpenseDAL {
   }
 
   public function saveExpense (Expense $expense) : void {
-    $sql = "INSERT INTO " . self::$dbNameId . "(" . self::$usernameId . ", " . self::$descriptionId . ", " . self::$amountId  . ", " . self::$currencyId . ", " . self::$expenseTypeId . ") VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO " . self::$dbNameId . "(" . self::$usernameId . ", " . self::$dateId . ", " . self::$descriptionId . ", " . self::$amountId  . ", " . self::$currencyId . ", " . self::$expenseTypeId . ") VALUES (?, ?, ?, ?, ?, ?)";
     $statement = $this->dbConnection->prepare($sql);
-    $statement->execute([$expense->getUsername(), $expense->getDescription(), $expense->getAmount(), $expense->getCurrency(), $expense->getExpenseType()]);
+    $statement->execute([$expense->getUsername(), $expense.getDate(), $expense->getDescription(), $expense->getAmount(), $expense->getCurrency(), $expense->getExpenseType()]);
   }
 
   private function createTableIfNotExist () : void {
     $sql = "CREATE TABLE IF NOT EXISTS expenses (
       " . self::$idId . " int(11) AUTO_INCREMENT PRIMARY KEY,
       " . self::$usernameId . " varchar(30) NOT NULL,
+      " . self::$dateId . " varchar(15),
       " . self::$descriptionId . " varchar(200),
       " . self::$amountId . " float(15),
       " . self::$currencyId . " varchar(30),

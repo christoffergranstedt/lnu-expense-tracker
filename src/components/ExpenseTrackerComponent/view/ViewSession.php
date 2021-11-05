@@ -6,6 +6,7 @@ class ViewSession {
   private static string $cliName = 'cli';
 	private static string $PHPVersion = '5.4.0';
   private static string $messageId = 'ExpenseTrackerComponent::messageId';
+  private static string $dateId = 'ExpenseTrackerComponent::dateId';
   private static string $descriptionId = 'ExpenseTrackerComponent::descriptionId';
   private static string $amountId = 'ExpenseTrackerComponent::amountId';
   private static string $currencyId = 'ExpenseTrackerComponent::currencyId';
@@ -57,6 +58,14 @@ class ViewSession {
     unset($_SESSION[self::$messageId]);
   }
 
+  public function setEnteredDate (string $date) : void {
+		$_SESSION[self::$dateId] = $date;
+	}
+
+  public function getEnteredDate () : string {
+		return isset($_SESSION[self::$dateId]) ? $_SESSION[self::$dateId] : '';
+	}
+
   public function setEnteredDescription (string $description) : void {
 		$_SESSION[self::$descriptionId] = $this->removeSpecialCharactersFromString($description);
 	}
@@ -97,6 +106,8 @@ class ViewSession {
 		$strippedValue = strip_tags($value);
 		return preg_replace('/[^a-zA-Z0-9_ -]/s','',$strippedValue);
 	}
+
+
 }
 
 ?>
