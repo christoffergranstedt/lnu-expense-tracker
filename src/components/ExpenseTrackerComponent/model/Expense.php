@@ -17,7 +17,7 @@ class Expense {
   private Currency $currency;
   private ExpenseType $expenseType;
 
-  public function __construct (User $user, string $date, Description $description, Amount $amount, Currency $currency, ExpenseType $expenseType) {
+  public function __construct (User $user, Date $date, Description $description, Amount $amount, Currency $currency, ExpenseType $expenseType) {
     $this->user = $user;
     $this->date = $date;
     $this->description = $description;
