@@ -16,7 +16,7 @@ class Date {
     if ($this->isValidDate($date)) {
       $this->date = $date;
     } else {
-      throw new InvalidDateException("The date format is invalid. Shoud be 'YYYY-MM-DD'")
+      throw new InvalidDateException("The date format is invalid. Shoud be 'YYYY-MM-DD'");
     }
   }
 
