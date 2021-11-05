@@ -21,7 +21,7 @@ class Date {
   }
 
   private function isValidDate(string $date) : bool { 
-    $format = 'Y-m-d'
+    $format = 'Y-m-d';
     $d = DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) == $date;
   }
