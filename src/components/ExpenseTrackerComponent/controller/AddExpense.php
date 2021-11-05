@@ -7,6 +7,7 @@ use ExpenseTrackerComponent\Model\Expenses as Expenses;
 use ExpenseTrackerComponent\Model\Expense as Expense;
 use ExpenseTrackerComponent\Model\ExpenseType as ExpenseType;
 use ExpenseTrackerComponent\Model\User as User;
+use ExpenseTrackerComponent\Model\Date as Date;
 use ExpenseTrackerComponent\Model\Description as Description;
 use ExpenseTrackerComponent\Model\Amount as Amount;
 use ExpenseTrackerComponent\Model\Currency as Currency;
@@ -69,11 +70,12 @@ class AddExpense {
   }
 
   private function getExpenseDataOfEnteredValues () : Expense {
+    $date = new Date($this->viewSession->getEnteredDate());
     $description = new Description($this->viewSession->getEnteredDescription());
     $amount = new Amount($this->viewSession->getEnteredAmount());
     $currency = new Currency($this->viewSession->getEnteredCurrency());
     $expenseType = new ExpenseType($this->viewSession->getEnteredExpenseType());
-    return new Expense($this->user, $description, $amount, $currency, $expenseType);
+    return new Expense($this->user, $date, $description, $amount, $currency, $expenseType);
   }
 
   private function displayErrorMessageAndExit (Exception $e) : void {

@@ -5,3 +5,4 @@ The task was to build an application in PHP without any frameworks while doing i
 
 The styling is awful, but that was not prioritized at all.
 I have done some minimal adjustments recently from the original version hand in.
+

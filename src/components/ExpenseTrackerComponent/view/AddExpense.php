@@ -6,6 +6,7 @@ use ExpenseTrackerComponent\View\ViewSession as ViewSession;
 use ExpenseTrackerComponent\Model\ExpenseType as ExpenseType;
 
 class AddExpense {
+  private static string $dateId = 'ExpenseAddForm::dateId';
   private static string $descriptionId = 'ExpenseAddForm::descriptionId';
   private static string $amountId = 'ExpenseAddForm::amountId';
   private static string $currencyId = 'ExpenseAddForm::currencyId';
@@ -36,6 +37,10 @@ class AddExpense {
 					<legend>Add a new expense</legend>
 					<p class="message">' . $this->viewSession->getMessageToShow() . '</p>
 					
+					<label for="' . self::$dateId . '">Date :</label>
+					<input type="date" id="' . self::$dateId . '" name="' . self::$dateId . '" value="' . $this->viewSession->getEnteredDate() . '" />
+          <br/>
+
 					<label for="' . self::$descriptionId . '">Description :</label>
 					<input type="text" id="' . self::$descriptionId . '" name="' . self::$descriptionId . '" value="' . $this->viewSession->getEnteredDescription() . '" />
           <br/>
@@ -62,6 +67,7 @@ class AddExpense {
   }
 
   public function setEnteredFormValuesInSession () : void {
+    if (isset($_POST[self::$dateId])) $this->viewSession->setEnteredDate($_POST[self::$dateId]);
     if (isset($_POST[self::$descriptionId])) $this->viewSession->setEnteredDescription($_POST[self::$descriptionId]);
     if (isset($_POST[self::$amountId])) $this->viewSession->setEnteredAmount($_POST[self::$amountId]);
     $this->viewSession->setEnteredCurrency(self::$defaultCurrency); // Observe this value is not dynamic and will always be SEK. Keep it for easy feature update in future.
@@ -69,6 +75,7 @@ class AddExpense {
   }
 
   public function clearEnteredFormValuesInSession () : void {
+    $this->viewSession->setEnteredDate('');
     $this->viewSession->setEnteredDescription('');
     $this->viewSession->setEnteredAmount('');
     $this->viewSession->setEnteredCurrency('');
