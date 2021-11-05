@@ -13,6 +13,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/mo
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/Expense.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/ExpenseType.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/ExpenseSummary.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/Date.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/Description.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/Amount.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/components/ExpenseTrackerComponent/model/Currency.php');
