@@ -7,6 +7,7 @@ use ExpenseTrackerComponent\Model\Expenses as Expenses;
 use ExpenseTrackerComponent\Model\Expense as Expense;
 use ExpenseTrackerComponent\Model\ExpenseType as ExpenseType;
 use ExpenseTrackerComponent\Model\User as User;
+use ExpenseTrackerComponent\Model\Date as Date;
 use ExpenseTrackerComponent\Model\Description as Description;
 use ExpenseTrackerComponent\Model\Amount as Amount;
 use ExpenseTrackerComponent\Model\Currency as Currency;
