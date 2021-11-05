@@ -38,6 +38,7 @@ class ExpensesOverView {
   private function getExpenseHTML (Expense $expense) : string {
     return '
       <div class="expense"> 
+        <p>Date: ' . $expense->getDate() . '</p>
         <p>Description: ' . $expense->getDescription() . '</p>
         <p>Amount: ' . $expense->getAmount() . ' ' . $expense->getCurrency() . '</p>
         <p>Expense Category: ' . $expense->getExpenseType() . '</p>

@@ -2,6 +2,7 @@
 
 namespace ExpenseTrackerComponent\Model;
 
+use ExpenseTrackerComponent\Model\Date as Date;
 use ExpenseTrackerComponent\Model\User as User;
 use ExpenseTrackerComponent\Model\Description as Description;
 use ExpenseTrackerComponent\Model\Currency as Currency;
@@ -10,17 +11,23 @@ use ExpenseTrackerComponent\Model\ExpenseType as ExpenseType;
 
 class Expense {
   private User $user;
+  private Date $date;
   private Description $description;
   private Amount $amount;
   private Currency $currency;
   private ExpenseType $expenseType;
 
-  public function __construct (User $user, Description $description, Amount $amount, Currency $currency, ExpenseType $expenseType) {
+  public function __construct (User $user, string $date, Description $description, Amount $amount, Currency $currency, ExpenseType $expenseType) {
     $this->user = $user;
+    $this->date = $date;
     $this->description = $description;
     $this->amount = $amount;
     $this->currency = $currency;
     $this->expenseType = $expenseType;
+  }
+
+  public function getDate () : string {
+    return $this->date->date;
   }
 
   public function getUsername () : string {
