@@ -54,7 +54,7 @@ class ExpenseDAL {
   public function saveExpense (Expense $expense) : void {
     $sql = "INSERT INTO " . self::$dbNameId . "(" . self::$usernameId . ", " . self::$dateId . ", " . self::$descriptionId . ", " . self::$amountId  . ", " . self::$currencyId . ", " . self::$expenseTypeId . ") VALUES (?, ?, ?, ?, ?, ?)";
     $statement = $this->dbConnection->prepare($sql);
-    $statement->execute([$expense->getUsername(), $expense.getDate(), $expense->getDescription(), $expense->getAmount(), $expense->getCurrency(), $expense->getExpenseType()]);
+    $statement->execute([$expense->getUsername(), $expense->getDate(), $expense->getDescription(), $expense->getAmount(), $expense->getCurrency(), $expense->getExpenseType()]);
   }
 
   private function createTableIfNotExist () : void {
